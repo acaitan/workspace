@@ -24,4 +24,8 @@ public interface NewsDao {
 
     @Select({"select",SELECT_FIELD,"from",TABLE_NAME,"where user_id = 1"})
     List<News> selectByWhereSql(Long userId,int offset,int limit);
+
+    List<News> selectByUserIdAndOffset(@Param("userId")Long userId,
+                                       @Param("offset")int offset,
+                                       @Param("limit")int limit);
 }

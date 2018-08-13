@@ -33,7 +33,7 @@ public class UserServiceTests {
 
     @Test
     public void testUser() {
-        Long id = 2L;
+        Long id = 35L;
         User user = userService.selectByUserId(id);
         logger.info(user.getPassword());
 

@@ -15,12 +15,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = ToutiaoApplication.class)
-//@Sql("/init-schema.sql")
+@Sql("/init-schema.sql")
 public class UserDaoTests {
 	@Resource
 	//@Autowired
@@ -37,12 +38,12 @@ public class UserDaoTests {
 		Random r = new Random();
         News news = new News();
 		for(int i = 0;i<15;i++){
-			/*User user = new User();
+			User user = new User();
 			user.setName(String.format("USER%d",i*15));
-			user.setHeadUrl(String.format("hettp://images.tsc.edu.shu.com/head/%dt.png",r.nextInt(1000)));
+			user.setHeadUrl(String.format("http://images.nowcoder.com/head/%dt.png",r.nextInt(1000)));
 			user.setPassword("tac");
 			user.setSalt("lxb");
-			userDao.addUser(user);*/
+			userDao.addUser(user);
 
 
 			news.setTitle(String.format("nowcoder%d",i));
@@ -51,12 +52,11 @@ public class UserDaoTests {
             Date date = new Date();
             date.setTime(date.getTime()+1000*3600*5*i);
             news.setCreateDate(date);
-            news.setImage(String.format("http://images.tac.edu.shu.com/head/%dm.png",r.nextInt(1000)));
+            news.setImage(String.format("http://images.nowcoder.com/head/%dm.png",r.nextInt(1000)));
             news.setLikeCount(i+1L);
-            news.setLink(String.format("http://www.nowcoder.com/link/{%d}.html",i));
+            news.setLink(String.format("http://www.nowcoder.com/%d.html",i));
 
             newsDao.addNews(news);
-
 
 
 
@@ -68,9 +68,17 @@ public class UserDaoTests {
 		userDao.deleteById(1L);
 		Assert.assertNull(userDao.selectById(1L));*/
 
-		Long id = 2L;
+		/*Long id = 2L;
 		User user = userService.selectByUserId(id);
-		Assert.assertEquals("tac",user.getPassword());
+		Assert.assertEquals("tac",user.getPassword());*/
+
+
+		/*List<News> xinwen = newsDao.selectByUserIdAndOffset(0L,0,10);
+		Assert.assertEquals(xinwen.size(),10);
+
+
+			Assert.assertEquals("tac",userService.selectByUserId(xinwen.get(0).getUserId()).getPassword());
+*/
 
 	}
 

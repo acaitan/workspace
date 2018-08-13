@@ -14,7 +14,7 @@ public class NewsService {
 
     public List<News> selectByNewsId(Long id,int offset,int limit){
 
-        return newsDao.selectByWhereSql(id,offset,limit);
+        return newsDao.selectByUserIdAndOffset(id,offset,limit);
     }
 
     public News selectById(Long id){

@@ -38,7 +38,7 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(value = {"/user/{userId}"},method = {RequestMethod.GET})
+    @RequestMapping(value = {"/user/{userId}/"},method = {RequestMethod.GET})
     public String user(@PathVariable(value = "userId") Long userId,
                        Model model){
 

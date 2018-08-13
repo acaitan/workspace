@@ -119,7 +119,7 @@
                         #set($cur_date = $date.format('yyyy-MM-dd', $vo.news.createdDate))
                     <h3 class="date">
                         <i class="fa icon-calendar"></i>
-                        <span>头条资讯 &nbsp; $date.format('yyyy-MM-dd', $vo.news.createdDate)</span>
+                        <span>头条资讯 &nbsp;  $date.format('yyyy-MM-dd',$!{vo.news.createdDate})</span>
                     </h3>
 
                     <div class="posts">
@@ -130,7 +130,7 @@
                                 <button class="click-dislike down" aria-pressed="true" title="反对"><i class="vote-arrow"></i>
                                 </button>
                             </div>
-                            <div class="content" data-url="http://nowcoder.com/posts/5l3hjr">
+                            <div class="content" data-url="https://nowcoder.com">
                                 <div >
                                     <img class="content-img" src="$!{vo.news.image}" alt="">
                                 </div>
